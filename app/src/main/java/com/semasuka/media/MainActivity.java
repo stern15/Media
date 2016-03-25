@@ -8,29 +8,17 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
 
     public void fade(View view) {
-
-
         ImageView peter = (ImageView) findViewById(R.id.peter);
 
-        if (peter.getScaleX()==1){
-
         peter.animate()
-                .scaleX(0.5f)
-                .scaleY(0.5f)
-                .alpha(0.5f)
-                .rotation(180f)
-                .translationX(200f)
-                .setDuration(2000);}
+                .translationXBy(1000f)
+                .translationYBy(1000f)
+                .rotationBy(3600)
+                .setDuration(3000);
 
-        else {
 
-            peter.animate()
-                    .scaleX(1f)
-                    .scaleY(1f)
-                    .alpha(1f)
-                    .rotation(0f)
-                    .translationX(0f)
-                    .setDuration(2000);}
+
+
 
     }
 
@@ -41,6 +29,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageView peter = (ImageView) findViewById(R.id.peter);
+
+
+        peter.setTranslationX(-1000f);
+        peter.setTranslationY(-1000f);
 
 
     }
