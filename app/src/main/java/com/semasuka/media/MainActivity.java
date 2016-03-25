@@ -1,30 +1,46 @@
 package com.semasuka.media;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    public void fade(View view){
+    public void fade(View view) {
+        ImageView peter = (ImageView) findViewById(R.id.peter);
+        ImageView stewie=(ImageView) findViewById(R.id.stewie);
 
-        ImageView Peter=(ImageView) findViewById(R.id.Peter);
-        ImageView Stewie=(ImageView) findViewById(R.id.Stewie);
-
-
-        Stewie.animate().alpha(1f).setDuration(2000);
-        Peter.animate().alpha(0f).setDuration(2000);
+       if(peter.getAlpha() == 1) {
 
 
+        peter.animate().alpha(0f).setDuration(2000);
+        stewie.animate().alpha(1f).setDuration(2000);
 
 
 
     }
+       else {
+            peter.animate().alpha(1f).setDuration(2000);
+            stewie.animate().alpha(0f).setDuration(2000);
+
+
+        }
+    }
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+      /*  ImageView peter = (ImageView) findViewById(R.id.peter);
+        peter.setTranslationX(-1500);*/
+
     }
+
+
 }
